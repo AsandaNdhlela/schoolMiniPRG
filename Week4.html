@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage Layout</title>
+</head>
+<style>
+    nav{
+        width: 100%;
+        background-color: #333;
+        font-size: 17px;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      text-align: center;
+      justify-content: space-evenly;
+    }
+    
+    li a {
+      display: flex;
+      color: white;
+      text-align: center;
+      padding: 14px 60px;
+      text-decoration: none;
+    }
+    
+    li a:hover {
+      background-color: #111;
+    }
+
+    .active {
+        background-color: #4e4e4e;
+    }   
+    main{
+        background-color: #c4c4c4;
+        text-align: center;
+        font-family: Arial;
+    }
+    th{
+        display: flex;
+        justify-content: space-between;
+        padding: 40px;
+    }
+    label{
+        padding: 5px;
+        margin-right: 20px;
+    }
+    input[type=number]{
+        border: 1px solid blue;
+        padding: 5px;
+        border-radius: 1.2px;
+    }
+    input[type=button]{
+        background-color: #bababa;
+        padding: 5px;
+        width: 150px;
+        color: white;
+        border: 1px solid rgb(21, 0, 255);
+    }
+    label i{
+        font-size: small;
+    }
+
+    span.formula{
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: small;
+    }
+
+    span{
+        text-transform: capitalize;
+        font-weight: 600;
+        text-decoration: underline;
+        font-family: Arial;
+    }
+
+    </style>
+<body>
+    <header>
+        <p>Create a Webpage with a single menu bar and several menu options for several
+            calculator applications. The main page will only have a menu bar with a image in
+            the middle of the webpage.</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h3>Cell Phone Plan calculator</h3>
+        <table>
+            <tr>
+                <th>
+                    <label for=""><span>p</span>rice of the <span>p</span>hone </label>
+                    <input type="number" value="" id="phonePrice">
+                </th>
+            </tr> 
+            <tr>
+                <th>
+                    <label for=""><span>m</span>onthly <span>p</span>ayment (R)</label>
+                    <input type="number" value="" id="monthlyPayment">
+                </th>
+            </tr> 
+            <tr>
+                <th>
+                    <label for=""><span>c</span>ontract <span>l</span>ength (Months)</label>
+                    <input type="number" value="" id="contractLength">
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label for=""><i>Formula</i>: <span class="formula">tc = pp + mp * cl </span></label>
+                    <input type="button" value="Calculate" onclick="cellPhonePlanCalculator()">
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label for=""><span>t</span>otal <span>c</span>ost (R)</label>
+                     <input type="number" value="" id="totalPrice">
+                </th>
+            </tr>
+            <!-- this would have be the colomn for the Interest Paid -->
+            <!-- <tr>
+                <th>
+                    <label for=""><span>I</span>nterest <span>P</span>aid (R)</label>
+                     <input type="number" value="" id="interestPaid">
+                </th>
+            </tr> -->
+        </table>
+    </main>
+    
+    <script>
+        function cellPhonePlanCalculator(){
+            var PP,MP,CL,TC,IP;
+
+            PP = parseInt(document.getElementById("phonePrice").value);
+            MP = parseInt(document.getElementById("monthlyPayment").value);
+            CL = parseInt(document.getElementById("contractLength").value);
+           
+            
+            TC = (PP+MP*CL);
+            TC = document.getElementById("totalPrice").value = TC
+            
+            //I thought it would be more fun if I added an interest display even though its not part of the this task
+            // IP (Interest Paid )
+            // IP= (TC-PP);
+            // IP = document.getElementById("interestPaid").value = IP
+
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>My Form</title>
+ <style>
+ /* <!-- //properties for the form to be formatted: -->
+ <!-- border -->
+ <!-- background-color -->
+ <!-- padding -->
+ <!-- margin -->
+ <!-- width, color, --> */
+.my-form{
+background-color: rgb(208, 208, 208);
+width: 500px;
+line-height: 30px;
+}
+
+h1{
+  text-align: center;
+    color: rgb(50, 50, 50);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+label{
+    text-transform: capitalize;
+    font-size: large;
+    padding: 4px;
+}
+
+input[type=text], input[type=number]{
+    width: 250px;
+    outline: none;
+    border: 1px solid #898989;
+    border-radius: 2px;
+    height: 20px;
+}
+
+#party-extras{
+    border-radius: 4px;
+}
+
+input[type="Request Quote"]{
+   padding: 2px;  
+   margin: 3px 30%;
+   font-weight: 500;
+   text-align: center;
+   background-color: #e6e6e6;
+   border: 1.5px solid black;
+   border-radius: 4px;
+   outline: none;
+}
+
+
+/* <!-- Apply CSS to the input fields --->
+input[type=text], input[type=number], selection{
+} */
+ </style>
+</head>
+<body>
+    <div class="my-form">
+        <h1>Children's Party Request Form</h1>
+        <form action="submit-form.php" method="POST">
+            <table>
+                <tr>
+                    <td><label for="party-theme">theme:</label></td>
+                    <td><input type="text" id="party-theme" name="party-theme"> </td>
+                </tr>
+                <tr>
+                    <td><label for="party-date">date:</label></td>
+                    <td><input type="date" id="party-date" name="party-date" required> </td>
+                </tr>
+                <tr>
+                    <td><label for="party-time">time:</label></td>
+                    <td><input type="time" id="party-time" name="party-time" required> </td>
+                </tr>
+                <tr>
+                    <td><label for="party-guests">Amount of children:</label></td>
+                    <td><input type="number" id="party-guests" name="party-guests" required> </td>
+                </tr>
+                <tr>
+                    <td><label for="Duration"> Duration: <label></td>
+                    <td><input type="radio" name="duration" value="half_day" checked>
+                    Full day </label>
+                    <label>
+                    <input type="radio" name="duration" value="full_day">
+                    Half day </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Main Colour: </label></td>
+                        <td>
+                        <input type="color" name="color_choice"  value="#9506A2"> <br>
+                         </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="Clown"> Arrange a clown?</label></td>
+                    <td><input type="checkbox" id="Clown" name="Clown" value="Clownneeded?" checked></td>
+                </tr>
+                <tr>
+                    <td><label for="party-extras">Additional requirements:</label></td>
+                    <td><textarea id="party-extras" name="party-extras" rows="2"></textarea> </td>
+                </tr>
+            </table>
+            <input type="Request Quote" value="Request Quote">
+        </form>
+    </div>
+</body>
+</html>

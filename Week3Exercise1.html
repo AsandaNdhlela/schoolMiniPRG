@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables and Calculations</title>
+</head>
+<body>
+    <h1>Exercise 1</h1>
+<p>Write a JavaScript Program for the following:
+- Allow the user to enter an Item Code, Price, and Quantity.
+- Calculate the Total Price by multiplying the Item Price by the Quantity
+- Allow for the button and function to perform the calculation
+- Display the Total Price
+- Use previous exercise (studentResults) as an example
+</p>
+
+    <table>
+        <tr>
+            <th><label for="Item Code" >Item Code</label></th>
+            <td><input type="text" value="" id="itemCode"></td>
+        </tr>
+        <tr>
+            <th><label for="Item Price" >Item Price</label></th>
+            <td><input type="number" value="" id="itemPrice" min="1"></td>
+        </tr>
+        <tr>
+            <th><label for="Quantity" >Quantity</label></th>
+            <td><input type="number" value="" id="itemQuantity" min="1"></td>
+        </tr>
+        <tr>
+            <th><label for="Total Price" >Total Price</label></th>
+            <td><input type="text" value="" id="itemTotalPrice"></td>
+        </tr>
+    </table>
+    <button onclick="calculate()">Calculate</button>
+
+    <script>
+        function calculate(){
+            var Price = 0;
+            var Quantity= 0;
+            var Total;
+
+            Price = document.getElementById("itemPrice").value;
+            Quantity = document.getElementById("itemQuantity").value;
+            
+            Total = (Price * Quantity);
+            Total = document.getElementById("itemTotalPrice").value =  "R "+Total;
+            
+        }
+    </script>
+</body>
+</html>
